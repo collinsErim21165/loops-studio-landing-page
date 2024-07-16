@@ -13,34 +13,81 @@ header {
     background-size: cover;
 }
 
-.nav-bar {
+/* nav {
+    background-color: white;
+    box-shadow: 3px 3px 5px rgb(0,0,0,0.1);
+} */
+
+.mainBar {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
-    padding-left: 40px;
+    justify-content: space-between;
+    padding: 10px 20px 0px 20px;
 }
 
-.nav-links {
+.mainLinks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hideonmobile a {
+    color: white;
+    position: relative;
+    text-decoration: none;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 50px;
+}
+
+/* nav a {
+    position: relative;
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 30px;
-    padding-right: 50px;
+    color: black;
+} */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 999;
+    background-color: black;
+    /* box-shadow: -10px 0 10px rgba(0,0,0,0.1); */
+    /* backdrop-filter: blur(10px); */
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
-.nav-links li {
-    list-style: none;
+.hamburger {
+    display: none;
 }
 
-.nav-link a {
-    color: white;
-    text-decoration: none;
-    position: relative;
-    font-size: larger;
-}
+ 
 
-.nav-link a::after {
+
+
+
+ .hideonmobile a::after {
     content: "";
     position: absolute;
     background-color: white;
@@ -51,24 +98,74 @@ header {
     transition: 0.3s;
 }
 
-.nav-link a:hover::after {
+  .hideonmobile a:hover::after {
     width: 100%;
 }
 
-.hamburger {
-    display: none;
+
+@media(max-width: 800px){
+    .hideonmobile {
+        display: none;
+    }
+
+   .sidebar li a {
+    color: white;
+    font-size: 26px;
+    padding-top: 90px;
+   }
+    
+    .hamburger {
+        display: flex;
+        height: 30px;
+        padding-top: 5px;
+    }
+    
+    .mainBar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        /* background: #000; */
+        height: 60px;
+        padding: 0px 20px 0px 20px;
+    }
+    
+    .sideLogo {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        justify-content: center; 
+        gap: 100px;
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+    
+    
+    
 }
 
-.bar {
-    height: 3px;
-    width: 29px;
-    border-radius: 999px;
-    background-color: white;
-    margin-top: 5px;
-    display: block;
-    margin-right: 30px;
-    cursor: pointer;
+@media(max-width: 400px){
+    .sidebar {
+        width: 100%;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .sideLogo {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        justify-content: center; 
+        gap: 100px;
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+    
 }
+
+
 
 .h1 h1 {
     font-size: 50px;
@@ -299,35 +396,8 @@ footer p {
 
 
 @media (max-width: 767px) {
-    .hamburger {
-        display: block;
-    }
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-    .nav-bar .nav-links {
-        right: -100%;
-        position: fixed;
-        width: 70%;
-        align-items: baseline;
-        padding-top: 20px;
-        padding-left: 10px;
-        flex-direction: column;
-        gap: 20px;
-        transition: 0.3s ease-in-out;
-        top: 50px;
-        height: 30%;
-        background-color: black;
-    }
-    .nav-bar .nav-links.active {
-        right: 30px;
-    }
+  
+    
     .nav-link a {
     color: white;
     text-decoration: none;
