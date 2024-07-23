@@ -104,6 +104,8 @@ nav li {
 
 
 @media(max-width: 800px){
+   
+
     .hideonmobile {
         display: none;
     }
@@ -112,6 +114,8 @@ nav li {
     color: white;
     font-size: 26px;
     padding-top: 90px;
+    padding-left: 30px;
+    text-decoration: none;
    }
     
     .hamburger {
@@ -396,6 +400,7 @@ footer p {
 
 
 @media (max-width: 767px) {
+  
   
     
     .nav-link a {
